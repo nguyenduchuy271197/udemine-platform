@@ -31,7 +31,8 @@ model Profile {
 model User {
   id         String   @id // Clerk User ID
   email      String   @unique
-  name       String?
+  firstName  String?
+  lastName   String?
   externalId String   @unique // Clerk User ID (duplicate for consistency)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt

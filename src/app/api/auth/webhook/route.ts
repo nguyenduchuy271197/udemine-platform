@@ -60,7 +60,8 @@ export async function POST(req: Request) {
       data: {
         id,
         email: evt.data.email_addresses[0].email_address,
-        name: evt.data.username,
+        firstName: evt.data.first_name,
+        lastName: evt.data.last_name,
         externalId: id,
       },
     });
