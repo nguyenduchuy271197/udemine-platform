@@ -14,7 +14,8 @@ import { Badge } from "@/components/ui/badge";
 // Interface cho data type
 interface Author {
   id: string;
-  name: string | null;
+  firstName: string | null;
+  lastName: string | null;
   email: string;
 }
 
@@ -41,15 +42,17 @@ const Posts = ({ posts }: PostListProps) => {
               <Avatar>
                 <AvatarImage
                   src={`https://api.dicebear.com/7.x/initials/svg?seed=${
-                    post.author.name || "User"
+                    post.author.firstName || "User"
                   }`}
                 />
-                <AvatarFallback>{post.author.name?.[0] || "U"}</AvatarFallback>
+                <AvatarFallback>
+                  {post.author.firstName?.[0] || "U"}
+                </AvatarFallback>
               </Avatar>
               <div>
                 <CardTitle className="text-lg">{post.title}</CardTitle>
                 <CardDescription>
-                  by {post.author.name || "Anonymous"}
+                  by {post.author.firstName || "Anonymous"}
                 </CardDescription>
               </div>
             </div>
